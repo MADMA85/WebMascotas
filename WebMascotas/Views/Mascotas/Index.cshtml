@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebMascotas.Models.Mascota>
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pedigri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Raza)
+            </th>
+
+@*                @
+                @Html.DropDownList("Raza",
+                Html.GetEnumSelectList<Razas>(),
+                "Select Raza",new { @class = "form-control" })
+                *@
+
+            <th>
+                @Html.DisplayNameFor(model => model.EmailResponsable)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pedigri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailResponsable)
+            </td>
+    @*        <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+@*@await Html.PartialAsync("_PartialCreate",Model)*@
